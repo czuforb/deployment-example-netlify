@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Prisma example with Netlify</title>
+    <title>Prisma example with Netlify / Hello röfik</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
@@ -52,7 +52,7 @@
     </style>
   </head>
   <body>
-    <div class="py-24" style="background: rgb(12, 52, 75)">
+    <div class="py-24" style="background: rgb(12, 52, 75);">
       <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold mb-8 text-white">
           Prisma example with Netlify
@@ -92,30 +92,29 @@
     </div>
 
     <script>
-      const responseContainer = document.querySelector('.response-container')
-      const loader = document.querySelector('.loader')
+      const responseContainer = document.querySelector(".response-container");
+      const loader = document.querySelector(".loader");
       function renderResponse(res) {
-        responseContainer.textContent = JSON.stringify(res, null, 2)
+        responseContainer.textContent = JSON.stringify(res, null, 2);
       }
 
-      const getApi = endpoint => {
-        loader.classList.remove('invisible')
+      const getApi = (endpoint) => {
+        loader.classList.remove("invisible");
         fetch(`/.netlify/functions/${endpoint}`)
-          .then(function(response) {
-            return response.json()
+          .then(function (response) {
+            return response.json();
           })
-          .then(function(response) {
-            renderResponse(response)
-            responseContainer.classList.remove('invisible')
+          .then(function (response) {
+            renderResponse(response);
+            responseContainer.classList.remove("invisible");
           })
-          .catch(function(err) {
-            responseContainer.textContent = 'Error fetching'
-            
+          .catch(function (err) {
+            responseContainer.textContent = "Error fetching";
           })
-          .finally(function() {
-            loader.classList.add('invisible')
-          })
-      }
+          .finally(function () {
+            loader.classList.add("invisible");
+          });
+      };
     </script>
   </body>
 </html>

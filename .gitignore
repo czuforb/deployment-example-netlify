@@ -10,3 +10,4 @@ sandbox
 *.tsbuildinfo
 # Local Netlify folder
 .netlify
+.env
